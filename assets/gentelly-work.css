@@ -1,0 +1,154 @@
+/* Gentelly — Portfolio & Team section (visually matches existing dark theme) */
+#gentelly-work {
+  background-color: var(--background, #0a0a0b);
+  color: var(--foreground, #e8e6e3);
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  padding: 88px 24px;
+  border-top: 1px solid var(--border, rgba(255,255,255,.08));
+  border-bottom: 1px solid var(--border, rgba(255,255,255,.08));
+}
+
+#gentelly-work .gw-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+#gentelly-work .gw-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--primary, #1d4ed8);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+#gentelly-work h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 8px;
+  color: var(--foreground, #f5f4f2);
+}
+
+#gentelly-work .gw-sub {
+  color: var(--muted-foreground, #9a9791);
+  font-size: 16px;
+  max-width: 620px;
+  margin: 0 0 48px;
+}
+
+#gentelly-work .gw-section-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted-foreground, #9a9791);
+  font-weight: 600;
+  margin: 64px 0 20px;
+}
+#gentelly-work .gw-section-label:first-of-type { margin-top: 0; }
+
+/* Portfolio grid */
+#gentelly-work .gw-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+#gentelly-work .gw-card {
+  background: var(--card, #17171a);
+  border: 1px solid var(--border, rgba(255,255,255,.08));
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform .25s ease, border-color .25s ease;
+}
+#gentelly-work .gw-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary, #1d4ed8);
+}
+
+#gentelly-work .gw-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #101012;
+  overflow: hidden;
+}
+#gentelly-work .gw-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#gentelly-work .gw-card-body { padding: 16px 18px 20px; }
+#gentelly-work .gw-card-year {
+  font-size: 11px;
+  color: var(--primary, #3b82f6);
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+#gentelly-work .gw-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 6px 0 4px;
+  color: var(--foreground, #f5f4f2);
+}
+#gentelly-work .gw-card-category {
+  font-size: 13px;
+  color: var(--muted-foreground, #9a9791);
+  margin-bottom: 8px;
+}
+#gentelly-work .gw-card-result {
+  font-size: 12.5px;
+  color: var(--muted-foreground, #b7b4ae);
+  line-height: 1.4;
+}
+
+/* Team grid */
+#gentelly-work .gw-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 18px;
+}
+#gentelly-work .gw-team-card { text-align: center; }
+#gentelly-work .gw-team-photo-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #101012;
+  border: 1px solid var(--border, rgba(255,255,255,.08));
+  margin-bottom: 10px;
+}
+#gentelly-work .gw-team-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(45%);
+  transition: filter .3s ease;
+}
+#gentelly-work .gw-team-card:hover .gw-team-photo-wrap img { filter: grayscale(0%); }
+#gentelly-work .gw-team-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--foreground, #f5f4f2);
+  margin-bottom: 2px;
+}
+#gentelly-work .gw-team-role {
+  font-size: 12px;
+  color: var(--muted-foreground, #9a9791);
+  line-height: 1.35;
+}
+
+/* Responsive: laptop / tablet / phone */
+@media (max-width: 1024px) {
+  #gentelly-work .gw-portfolio-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  #gentelly-work .gw-team-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}
+@media (max-width: 640px) {
+  #gentelly-work { padding: 56px 16px; }
+  #gentelly-work .gw-portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  #gentelly-work .gw-team-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  #gentelly-work .gw-card-body { padding: 12px 14px 16px; }
+}
